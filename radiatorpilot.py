@@ -86,7 +86,7 @@ async def main():
                     STATE_FILE.write("OFF")
                     print(str(datetime.datetime.now()) +  f" Turning off {dev.name}...")
             except Exception as err:
-                print(f"Unexpected {err=}, {type(err)=}")
+                print(f"Unexpected err={err}, type={type(err)}")
             finally:
                 await asyncio.sleep(DELAY)
 
@@ -119,7 +119,7 @@ async def main():
                         print(str(datetime.datetime.now()) +  f" Turning off {dev.name}...")
                     
                 except Exception as err:
-                    print(f"Unexpected {err=}, {type(err)=}")
+                    print(f"Unexpected err={err}, type={type(err)}")
                 finally:
                     await asyncio.sleep(DELAY)
             
