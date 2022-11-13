@@ -33,6 +33,7 @@ STATE_FILE =  open(os.path.join(PATH, STATE), 'w+')
 
 
 Shutdown = 0
+statevalue=0
 
 def handler(signum, frame):
     global Shutdown
