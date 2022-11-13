@@ -21,19 +21,19 @@ MIN = "MIN"
 ACTUAL = "ACTUAL"
 STATE = "STATE"
 
-MAXVAL="19.5"
+MAXVAL="19.5\n"
 MINVAL="19.0"
-DEFAULTACTVAL="19.001"
+DEFAULTACTVAL="19.001\n"
 DELAY=5
 
 if not os.path.exists(PATH): 
     os.mkdir(PATH)
 MAX_FILE =  open(os.path.join(PATH, MAX), 'w+')
-MAX_FILE.write(MAXVAL)
+MAX_FILE.write(str(MAXVAL))
 MIN_FILE =  open(os.path.join(PATH, MIN), 'w+')
-MIN_FILE.write(MIN_FILE)
+MIN_FILE.write(str(MINVAL))
 ACTUAL_FILE =  open(os.path.join(PATH, ACTUAL), 'w+')
-ACTUAL_FILE.write(DEFAULTACTVAL)
+ACTUAL_FILE.write(str(DEFAULTACTVAL))
 STATE_FILE =  open(os.path.join(PATH, STATE), 'w+')
 STATE_FILE.write("OFF")
 
