@@ -24,7 +24,7 @@ STATE = "STATE"
 MAXVAL="19.5\n"
 MINVAL="19.0"
 DEFAULTACTVAL="19.001\n"
-DELAY=5
+DELAY=30
 
 if not os.path.exists(PATH): 
     os.mkdir(PATH)
