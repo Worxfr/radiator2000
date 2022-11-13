@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export MEROSS_EMAIL="XXXXXXXXXXXX"
+export MEROSS_PASSWORD='XXXXXXXXXXXX'
+export MEROSS_DEVICE_NAME='XXXXXXXXXXXX'
+export MITHERM_MAC='XXXXXXXXXXXX'
+
+
+screen -d -m python3 radiatorpilot.py
+screen -d -m python3 LYWSD03MMC.py --device $MITHERM_MAC -deb -b --skipidentical 10 -call 'LYWSD03MMC-out.py'
+
+screen -ls
