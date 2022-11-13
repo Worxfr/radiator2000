@@ -4,7 +4,6 @@ import os
 import signal
 
 import meross_iot
-
 from meross_iot.http_api import MerossHttpClient
 from meross_iot.manager import MerossManager
 
@@ -22,18 +21,27 @@ MIN = "MIN"
 ACTUAL = "ACTUAL"
 STATE = "STATE"
 
+MAXVAL="19.5"
+MINVAL="19.0"
+DEFAULTACTVAL="19.001"
 DELAY=5
 
 if not os.path.exists(PATH): 
     os.mkdir(PATH)
 MAX_FILE =  open(os.path.join(PATH, MAX), 'w+')
+MAX_FILE.write(MAXVAL)
 MIN_FILE =  open(os.path.join(PATH, MIN), 'w+')
+MIN_FILE.write(MIN_FILE)
 ACTUAL_FILE =  open(os.path.join(PATH, ACTUAL), 'w+')
+ACTUAL_FILE.write(DEFAULTACTVAL)
 STATE_FILE =  open(os.path.join(PATH, STATE), 'w+')
+STATE_FILE.write("OFF")
 
+global statevalue
+global Shutdown
 
 Shutdown = 0
-statevalue=0
+statevalue = 0
 
 def handler(signum, frame):
     global Shutdown
@@ -67,7 +75,7 @@ async def main():
 
             try:
                 
-                
+                statevalue = 0
                 
                 minstr = MIN_FILE.read()
                 minvalue = float(minstr)
