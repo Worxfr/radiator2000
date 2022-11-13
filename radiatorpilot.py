@@ -26,10 +26,10 @@ DELAY=5
 
 if not os.path.exists(PATH): 
     os.mkdir(PATH)
-MAX_FILE =  open(os.path.join(PATH, MAX), 'r')
-MIN_FILE =  open(os.path.join(PATH, MIN), 'r')
-ACTUAL_FILE =  open(os.path.join(PATH, ACTUAL), 'r')
-STATE_FILE =  open(os.path.join(PATH, STATE), 'w')
+MAX_FILE =  open(os.path.join(PATH, MAX), 'w+')
+MIN_FILE =  open(os.path.join(PATH, MIN), 'w+')
+ACTUAL_FILE =  open(os.path.join(PATH, ACTUAL), 'w+')
+STATE_FILE =  open(os.path.join(PATH, STATE), 'w+')
 
 
 Shutdown = 0
