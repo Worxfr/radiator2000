@@ -53,7 +53,7 @@ def handler(signum, frame):
 
 async def main():
     # Setup the HTTP client API from user-password
-        http_api_client = await MerossHttpClient.async_from_user_password(email=EMAIL, password=PASSWORD)
+        http_api_client = await MerossHttpClient.async_from_user_password(api_base_url='https://iotx-eu.meross.com',email=EMAIL, password=PASSWORD)
 
         # Setup and start the device manager
         manager = MerossManager(http_client=http_api_client)
